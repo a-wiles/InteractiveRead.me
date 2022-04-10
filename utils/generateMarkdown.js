@@ -22,10 +22,10 @@ function generateMarkdown(data) {
   ## License
   This project is made by: ${data.license}
 
-  ## Usage Instructions
+  ## Usage
   ${data.usage}
 
-  ## Test Instructions
+  ## Test
   ${data.test}
 
   ## Contributions
