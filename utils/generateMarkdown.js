@@ -8,8 +8,8 @@ function generateMarkdown(data) {
   * [Installation Instructions](#installation)
   * [License](#license)
   * [Usage Instructions](#usage)
-  * [Test Instructions](#tests)
-  * [Contributions](#contribution)
+  * [Test Instructions](#test)
+  * [Contributions](#contributions)
   * [Questions](#questions)
   
   
