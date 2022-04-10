@@ -5,9 +5,7 @@ const fs = require('fs');
 
 
 // TODO: Create an array of questions for user input
-const questions = () => {
-    return inquirer
-    .prompt([
+const questions = [
         {
             type: 'input',
             name: 'github',
@@ -124,8 +122,7 @@ const questions = () => {
             
         },
 
-    ])
-};
+    ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -141,7 +138,6 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        console.log(generateMarkdown(answers));
         writeToFile('./ReadMe_Generated.md', generateMarkdown(answers));
     })
 }

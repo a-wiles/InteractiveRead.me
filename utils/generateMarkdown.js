@@ -1,51 +1,39 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if (licenseInput) {
-    return 
-      `![badge](https://img.shields.io/badge/license-${license}-red)`
-} else {
-  return 
-  var licenses = [];
-}}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-    return renderLicenseBadge(license);
-}
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ${renderLicenseLink(data.license)}
+  ![badge](https://img.shields.io/badge/license-${data.license}-green)
 
   ## Table-of-Contents
-  * [Description] (#description)
-  * [Installation Instructions] (#installation)
-  * [License] (#license)
-  * [Usage Instructions] (#usage)
-  * [Test Instructions] (#tests)
-  * [Contributions] (#contribution)
+  * [Description](#description)
+  * [Installation Instructions](#installation)
+  * [License](#license)
+  * [Usage Instructions](#usage)
+  * [Test Instructions](#tests)
+  * [Contributions](#contribution)
+  * [Questions](#questions)
   
   
   ## Description
   ${data.description}
 
-  ##Installation
-  ${data.installation}
+  ## Installation
+  ${data.install}
 
-  ##License
+  ## License
   This project is made by: ${data.license}
 
-  ##Usage Instructions
+  ## Usage Instructions
   ${data.usage}
 
-  ##Test Instructions
+  ## Test Instructions
   ${data.test}
 
-  ##Contributions
+  ## Contributions
   ${data.contribution}
+
+  ## Questions
+  * Github Account: [GitHub](https://github.com/${data.github})
+  * Email Account: [Email](mailto:${data.email})
 `;
 }
 
