@@ -1,9 +1,12 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
+const generateMarkdown = require ('./utils/generateMarkdown');
+const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 const userQuestions = () => {
-    return inquirer.prompt([
+    return inquirer
+    .prompt([
         {
             type: 'input',
             name: 'github',
@@ -56,6 +59,69 @@ const userQuestions = () => {
                 }
             }
         }, 
+        {
+            type: 'input',
+            name: 'install',
+            message: 'Please describe any installation requirements (Required)',
+            validate: installInput => {
+                if (installInput) {
+                    return true;
+                } else {
+                    console.log('Please enter install instructions!');
+                    return false;
+                }
+            }
+        }, 
+
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Please describe the usage for your project (Required)',
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('Please enter usage descriptions!');
+                    return false;
+                }
+            }
+        },
+
+        {
+            type: 'input',
+            name: 'contribution',
+            message: 'Please enter any Contributions on the project? (Required)',
+            validate: contributionInput => {
+                if (contributionInput) {
+                    return true;
+                } else {
+                    console.log('Please enter N/A for no contributions!');
+                    return false;
+                }
+            }
+        },
+
+        {
+            type: 'input',
+            name: 'test',
+            message: 'Please enter any tests for the project? (Required)',
+            validate: testInput => {
+                if (testInput) {
+                    return true;
+                } else {
+                    console.log('Please enter N/A for no test instructions!');
+                    return false;
+                }
+            }
+        },
+
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Please select the License Type (Required)',
+            choices: ['MIT', 'GPL', 'AGPL']
+            
+        },
 
     ])
 };
